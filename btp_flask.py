@@ -1,10 +1,10 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
 def main():
-    return "This is where you write backchodi"
+    return render_template('index.html')
 
 @app.route('/station')
 def hello():
