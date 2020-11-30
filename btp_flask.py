@@ -3,7 +3,8 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
+@app.route('/home', methods = ['GET'])
 def main():
     return render_template('index.html')
 
@@ -11,7 +12,7 @@ def main():
 def hello():
     return 'Dropdown shit'
 
-@app.route('/station1', methods=['GET'])
+@app.route('/station1', methods=['GET', 'POST'])
 def dropdown():
     states = ['s1', 's2', 's3', 's4']
     stations = ['st1', 'st2', 'st3']
